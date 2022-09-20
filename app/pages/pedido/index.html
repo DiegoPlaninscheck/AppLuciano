@@ -10,10 +10,15 @@
 
   <body>
     <header>
-      <h1>Pizzaria do Planinscheck</h1>
+      <div class="container-header">
+        <h1>Pizzaria do Planinscheck</h1>
+        <nav>
+          <a href="../confirma/index.html">Confirmação de pedido</a>
+        </nav>
+      </div>
     </header>
     <main class="container-main">
-      <div class="container">
+      <div class="container-main-cliente">
         <h3 id="cadastro">Cadastro do cliente</h3>
         <p>Nome</p>
         <input type="text" />
@@ -23,23 +28,33 @@
         <input type="number" />
       </div>
     </main>
-    <footer>
-      <div>
+    <footer class="container-footer">
+      <div class="container-footer-div">
         <h3 id="pizza">Monte sua pizza</h3>
-        <p>Tamanho:</p>
-        <input type="radio" id="p" name="tamanho" value="p" />Pequena (2
-        sabores) <input type="radio" id="m" name="tamanho" value="m" />Média (3
-        sabores) <input type="radio" id="g" name="tamanho" value="g" />Grande (4
-        sabores) <input type="radio" id="gg" name="tamanho" value="gg" />Gigante
-        (5 sabores)
-        <p>Adicionais:</p>
-        <input type="checkbox" id="borda" /> Borda recheada + (8 R$)
-        <p>Bebidas:</p>
-        <input type="checkbox" id="refri" /> Refrigerante 2L (R$ 10)
-        <input type="checkbox" id="suco" /> Suco 1L (R$ 8)
-        <p>Entrega ou retirada no local:</p>
-        <input type="radio" id="Entrega" />Entrega + (5 R$)
-        <input type="radio" />Retirada<br /><br />
+        <div>
+          <p>Tamanho:</p>
+          <input type="radio" id="p" name="tamanho" value="p" />Pequena (2
+          sabores) <input type="radio" id="m" name="tamanho" value="m" />Média
+          (3 sabores)
+          <input type="radio" id="g" name="tamanho" value="g" />Grande (4
+          sabores)
+          <input type="radio" id="gg" name="tamanho" value="gg" />Gigante (5
+          sabores)
+        </div>
+        <div>
+          <p>Adicionais:</p>
+          <input type="checkbox" id="borda" /> Borda recheada + (8 R$)
+        </div>
+        <div>
+          <p>Bebidas:</p>
+          <input type="checkbox" id="refri" /> Refrigerante 2L (R$ 10)
+          <input type="checkbox" id="suco" /> Suco 1L (R$ 8)
+        </div>
+        <div>
+          <p>Entrega ou retirada no local:</p>
+          <input type="radio" id="Entrega" />Entrega + (5 R$)
+          <input type="radio" />Retirada<br /><br />
+        </div>
         <button id="confirmar" onclick="">Confirmar pedido</button>
       </div>
     </footer>
