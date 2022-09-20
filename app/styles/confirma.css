@@ -1,13 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #fff;
-  font-family: "Courier New", Courier, monospace;
+  color: rgb(0, 0, 0);
+  font-family: Poppins;
 }
 
 body {
-  background-color: #a6928d;
+  background-color: #f1d39e;
 }
 
 .container {
@@ -22,7 +24,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #5f4e49;
+  background-color: #c33a38;
   padding: 0 20px;
 }
 
@@ -88,4 +90,12 @@ body {
 
 .container-valor-total span {
   padding: 10px;
+}
+
+#pedidolink{
+  color: #fff;
+}
+
+#dados-cliente{
+  color: #fff;
 }
