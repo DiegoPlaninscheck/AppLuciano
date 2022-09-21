@@ -24,19 +24,25 @@
           <div>
             <p>Nome</p>
           </div>
-          <input type="text" />
+          <input type="text" id="nome" placeholder="usuario" />
         </div>
         <div>
           <div>
             <p>Email</p>
           </div>
-          <input type="text" />
+          <input type="text" id="email" placeholder="usuario@gmai.com" />
         </div>
         <div>
           <div>
-            <p>Número</p>
+            <p>Telefone</p>
           </div>
-          <input type="number" />
+          <input type="number" id="telefone" placeholder="0000-0000" />
+        </div>
+        <div>
+          <div>
+            <p>Endereço</p>
+          </div>
+          <input type="text" id="endereco" placeholder="rua tal" />
         </div>
       </div>
     </main>
@@ -45,27 +51,31 @@
         <h3 id="pizza">Monte sua pizza</h3>
         <div>
           <b><p>Tamanho:</p></b>
-          <input type="radio" id="p" name="tamanho" value="p" /> Pequena (2
-          sabores) <input type="radio" id="m" name="tamanho" value="m" /> Média
-          (3 sabores)
-          <input type="radio" id="g" name="tamanho" value="g" /> Grande (4
+          <input type="radio" id="p" name="tamanho" value="pequena" /> Pequena
+          (2 sabores)
+          <input type="radio" id="m" name="tamanho" value="média" /> Média (3
           sabores)
-          <input type="radio" id="gg" name="tamanho" value="gg" /> Gigante (5
+          <input type="radio" id="g" name="tamanho" value="grande" /> Grande (4
           sabores)
+          <input type="radio" id="gg" name="tamanho" value="gigante" /> Gigante
+          (5 sabores)
         </div>
         <div>
           <b><p>Adicionais:</p></b>
-          <input type="checkbox" id="borda" /> Borda recheada + (8 R$)
+          <input type="checkbox" id="borda" value="borda recheada" /> Borda
+          recheada + (8 R$)
         </div>
         <div>
           <b><p>Bebidas:</p></b>
-          <input type="checkbox" id="refri" /> Refrigerante 2L (R$ 10)
-          <input type="checkbox" id="suco" /> Suco 1L (R$ 8)
+          <input type="checkbox" id="refri" value="refrigerante" /> Refrigerante
+          2L (R$ 10) <input type="checkbox" id="suco" value="suco" /> Suco 1L
+          (R$ 8)
         </div>
         <div>
           <b><p>Entrega ou retirada no local:</p></b>
-          <input type="radio" id="Entrega" /> Entrega + (5 R$)
-          <input type="radio" /> Retirada<br /><br />
+          <input type="radio" id="entrega" value="entrega" /> Entrega + (5 R$)
+          <input type="radio" id="retirada" value="retirada" />
+          Retirada<br /><br />
         </div>
         <button id="confirmar" onclick="">Confirmar pedido</button>
       </div>
