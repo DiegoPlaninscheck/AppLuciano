@@ -51,15 +51,14 @@
         <h3 id="pizza">Monte sua pizza</h3>
         <div>
           <b><p>Tamanho:</p></b>
-          <input type="radio" id="p" name="tamanho" value="pequena" /> Pequena
-          (2 sabores)
-          <input type="radio" id="m" name="tamanho" value="média" /> Média (3
-          sabores)
-          <input type="radio" id="g" name="tamanho" value="grande" /> Grande (4
-          sabores)
-          <input type="radio" id="gg" name="tamanho" value="gigante" /> Gigante
-          (5 sabores)
+          <select>
+            <option value="2">Pequena (2 sabores)</option>
+            <option value="3">Média (3 sabores)</option>
+            <option value="4">Grande (4 sabores)</option>
+            <option value="5">Gigante (5 sabores)</option>
+          </select>
         </div>
+        <div id="selects"></div>
         <div>
           <b><p>Adicionais:</p></b>
           <input type="checkbox" id="borda" value="borda recheada" /> Borda
