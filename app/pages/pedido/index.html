@@ -7,7 +7,6 @@
     <title>Pedido</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-
   <body>
     <header>
       <div class="container-header">
@@ -51,16 +50,17 @@
         <h3 id="pizza">Monte sua pizza</h3>
         <div>
           <b><p>Tamanho:</p></b>
-          <select>
+          <select id="sabores">
+            <option>Sem tamanho</option>
             <option value="2">Pequena (2 sabores)</option>
             <option value="3">Média (3 sabores)</option>
             <option value="4">Grande (4 sabores)</option>
             <option value="5">Gigante (5 sabores)</option>
           </select>
         </div>
-        <b><p>Sabores:</p></b>
-        <div id="select">
-          <select name="sabores" id="sabores">
+        <b style="display: none" id="saboresTitulo"><p>Sabores:</p></b>
+        <div id="selects">
+          <!-- <select name="sabores" id="sabores">
             <option value="cal">Calabresa</option>
             <option value="fra">Frango</option>
             <option value="mig">Mignon</option>
@@ -98,7 +98,7 @@
             <option value="mig">Mignon</option>
             <option value="pep">Peperoni</option>
             <option value="aeo">Alho e Oleo</option>
-          </select>
+          </select> -->
         </div>
         <div>
           <b>

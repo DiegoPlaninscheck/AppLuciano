@@ -16,27 +16,61 @@ let suco = document.getElementById("suco");
 let entrega = document.getElementById("entrega");
 let retirada = document.getElementById("retirada");
 
-while ((pequena.checked || media.checked || grande.checked || gigante.checked)) {
-  let tamanho;
-  if (pequena.checked) {
-    tamanho = 2;
-  } else if (media.checked) {
-    tamanho = 3;
-  } else if (grande.checked) {
-    tamanho = 4;
-  } else if (gigante.checked) {
-    tamanho = 5;
+let sabores = document.getElementById("sabores");
+
+sabores.addEventListener("change", () => {
+
+  while (true) {
+    let selects = document.getElementById("select");
+    if (!!selects) {
+      document.getElementById("select").remove();
+    }
+    if (!selects) {
+      break;
+    }
   }
 
-  const selects = document.getElementById("selects")
-  for (let i = 0; i < tamanho; i++) {
-    let select = document.createElement("select");
-    selects.appendChild(select);
+  let saborTitulo = document.getElementById("saboresTitulo");
+
+  let qtdSabores;
+  switch (sabores.value) {
+    case "2": {
+      qtdSabores = 2;
+      break;
+    }
+    case "3": {
+      qtdSabores = 3;
+      break;
+    }
+    case "4": {
+      qtdSabores = 4;
+      break;
+    }
+    case "5": {
+      qtdSabores = 5;
+      break;
+    }
+    default: {
+      saborTitulo.style.display = "none";
+      return;
+    }
   }
-}
+
+  let divSelect = document.getElementById("selects");
+
+  saborTitulo.style.display = "flex";
+
+  for (let i = 0; i < qtdSabores; i++) {
+    let select = document.createElement("select");
+    select.id = "select"
+    divSelect.appendChild(select);
+  }
+});
+
 
 
 document.getElementById("confirmar").addEventListener("click", () => {
+  console.log(sabores.value);
   let tamanho;
   let adicionais;
   let bebida;
