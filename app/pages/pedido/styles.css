@@ -48,7 +48,7 @@ header {
     font-size: 16px;
   }
 
-  h3{
+  h3 {
     font-size: 15px;
   }
 
@@ -66,7 +66,7 @@ header {
     font-size: 11px;
   }
 
-  .container-main-cliente{
+  .container-main-cliente {
     border-radius: 5px 5px 0 0;
   }
 
@@ -171,11 +171,16 @@ header {
   color: #fff;
   margin-bottom: 10px;
 }
-.container-footer-div button a{
+
+.container-footer-div button a {
   text-decoration: none;
   color: #fff;
 }
 
 h3 {
   font-size: 20px;
+}
+
+a:hover {
+  color: black;
 }
