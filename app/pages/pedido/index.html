@@ -1,86 +1,138 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pedido</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
 
-  <body>
-    <header>
-      <div class="container-header">
-        <h1>Pizzaria CheckMitz</h1>
-        <nav>
-          <a href="../confirma/index.html">Confirmação de pedido</a>
-        </nav>
-      </div>
-    </header>
-    <main class="container-main">
-      <div class="container-main-cliente">
-        <h3 id="cadastro">Cadastro do cliente</h3>
-        <div>
-          <div>
-            <p>Nome</p>
-          </div>
-          <input type="text" id="nome" placeholder="usuario" />
-        </div>
-        <div>
-          <div>
-            <p>Email</p>
-          </div>
-          <input type="text" id="email" placeholder="usuario@gmai.com" />
-        </div>
-        <div>
-          <div>
-            <p>Telefone</p>
-          </div>
-          <input type="number" id="telefone" placeholder="0000-0000" />
-        </div>
-        <div>
-          <div>
-            <p>Endereço</p>
-          </div>
-          <input type="text" id="endereco" placeholder="rua tal" />
-        </div>
-      </div>
-    </main>
-    <footer class="container-footer">
-      <div class="container-footer-div">
-        <h3 id="pizza">Monte sua pizza</h3>
-        <div>
-          <b><p>Tamanho:</p></b>
-          <input type="radio" id="p" name="tamanho" value="pequena" /> Pequena
-          (2 sabores)
-          <input type="radio" id="m" name="tamanho" value="média" /> Média (3
-          sabores)
-          <input type="radio" id="g" name="tamanho" value="grande" /> Grande (4
-          sabores)
-          <input type="radio" id="gg" name="tamanho" value="gigante" /> Gigante
-          (5 sabores)
-        </div>
-        <div>
-          <b><p>Adicionais:</p></b>
-          <input type="checkbox" id="borda" value="borda recheada" /> Borda
-          recheada + (8 R$)
-        </div>
-        <div>
-          <b><p>Bebidas:</p></b>
-          <input type="checkbox" id="refri" value="refrigerante" /> Refrigerante
-          2L (R$ 10) <input type="checkbox" id="suco" value="suco" /> Suco 1L
-          (R$ 8)
-        </div>
-        <div>
-          <b><p>Entrega ou retirada no local:</p></b>
-          <input type="radio" id="entrega" value="entrega" /> Entrega + (5 R$)
-          <input type="radio" id="retirada" value="retirada" />
-          Retirada<br /><br />
-        </div>
-        <button id="confirmar">Confirmar pedido</button>
-      </div>
-    </footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedido</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
 
-    <script src="./index.js"></script>
-  </body>
+<body>
+  <header>
+    <div class="container-header">
+      <h1>Pizzaria CheckMitz</h1>
+      <nav>
+        <a href="../confirma/index.html">Confirmação de pedido</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container-main">
+    <div class="container-main-cliente">
+      <h3 id="cadastro">Cadastro do cliente</h3>
+      <div>
+        <div>
+          <p>Nome</p>
+        </div>
+        <input type="text" id="nome" placeholder="usuario" />
+      </div>
+      <div>
+        <div>
+          <p>Email</p>
+        </div>
+        <input type="text" id="email" placeholder="usuario@gmai.com" />
+      </div>
+      <div>
+        <div>
+          <p>Telefone</p>
+        </div>
+        <input type="number" id="telefone" placeholder="0000-0000" />
+      </div>
+      <div>
+        <div>
+          <p>Endereço</p>
+        </div>
+        <input type="text" id="endereco" placeholder="rua tal" />
+      </div>
+    </div>
+  </main>
+  <footer class="container-footer">
+    <div class="container-footer-div">
+      <h3 id="pizza">Monte sua pizza</h3>
+      <div>
+        <b>
+          <p>Tamanho:</p>
+        </b>
+        <input type="radio" id="p" name="tamanho" value="pequena" /> Pequena
+        (2 sabores)
+        <input type="radio" id="m" name="tamanho" value="média" /> Média (3
+        sabores)
+        <input type="radio" id="g" name="tamanho" value="grande" /> Grande (4
+        sabores)
+        <input type="radio" id="gg" name="tamanho" value="gigante" /> Gigante
+        (5 sabores)
+      </div>
+      <b><p>Sabores:</p></b>
+      <div id="select">
+        <select name="sabores" id="sabores">
+          <option value="cal">Calabresa</option>
+          <option value="fra">Frango</option>
+          <option value="mig">Mignon</option>
+          <option value="pep">Peperoni</option>
+          <option value="aeo">Alho e Oleo</option>
+        </select>
+
+        <select name="sabores1" id="sabores1">
+          <option value="cal">Calabresa</option>
+          <option value="fra">Frango</option>
+          <option value="mig">Mignon</option>
+          <option value="pep">Peperoni</option>
+          <option value="aeo">Alho e Oleo</option>
+        </select>
+
+        <select name="sabores2" id="sabores2">
+          <option value="cal">Calabresa</option>
+          <option value="fra">Frango</option>
+          <option value="mig">Mignon</option>
+          <option value="pep">Peperoni</option>
+          <option value="aeo">Alho e Oleo</option>
+        </select>
+
+        <select name="sabores3" id="sabores3">
+          <option value="cal">Calabresa</option>
+          <option value="fra">Frango</option>
+          <option value="mig">Mignon</option>
+          <option value="pep">Peperoni</option>
+          <option value="aeo">Alho e Oleo</option>
+        </select>
+
+        <select name="sabores4" id="sabores4">
+          <option value="cal">Calabresa</option>
+          <option value="fra">Frango</option>
+          <option value="mig">Mignon</option>
+          <option value="pep">Peperoni</option>
+          <option value="aeo">Alho e Oleo</option>
+        </select>
+      </div>
+      <div>
+        <b>
+          <p>Adicionais:</p>
+        </b>
+        <input type="checkbox" id="borda" value="borda recheada" /> Borda
+        recheada + (8 R$)
+      </div>
+      <div>
+        <b>
+          <p>Bebidas:</p>
+        </b>
+        <input type="checkbox" id="refri" value="refrigerante" /> Refrigerante
+        2L (R$ 10) <input type="checkbox" id="suco" value="suco" /> Suco 1L
+        (R$ 8)
+      </div>
+      <div>
+        <b>
+          <p>Entrega ou retirada no local:</p>
+        </b>
+        <input type="radio" id="entrega" value="entrega" /> Entrega + (5 R$)
+        <input type="radio" id="retirada" value="retirada" />
+        Retirada<br /><br />
+      </div>
+      <button id="confirmar">Confirmar pedido</button>
+    </div>
+  </footer>
+
+  <script src="./index.js"></script>
+</body>
+
 </html>

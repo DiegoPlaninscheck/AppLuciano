@@ -92,10 +92,14 @@ body {
   padding: 10px;
 }
 
-#pedidolink{
+#pedidolink {
   color: #fff;
 }
 
-#dados-cliente{
+#dados-cliente {
   color: #fff;
+}
+
+a:hover {
+  color: black;
 }
