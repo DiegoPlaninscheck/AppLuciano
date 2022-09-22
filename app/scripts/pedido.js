@@ -22,12 +22,17 @@ document.getElementById("confirmar").addEventListener("click", () => {
   let bebida;
   let tipoEntrega;
 
-  const pessoa = {
-    nome: nome.value,
-    email: email.value,
-    telefone: telefone.value,
-    endereco: endereco.value,
-  };
+  if (!(nome.value && email.value && telefone.value && endereco.value)) {
+    alert("Preencha todos os campos!");
+  } else {
+    const pessoa = {
+      nome: nome.value,
+      email: email.value,
+      telefone: telefone.value,
+      endereco: endereco.value,
+    };
+    // localStorage.setItem("pessoa", pessoa);
+  }
 
   if (pequena.checked) {
     tamanho = pequena.value;
@@ -62,26 +67,8 @@ document.getElementById("confirmar").addEventListener("click", () => {
     entrega: tipoEntrega,
   };
 
-  //   console.log(nome.value);
-  //   console.log(email.value);
-  //   console.log(telefone.value);
-  //   console.log(endereco.value);
-
-  console.log(tamanho);
-  console.log(adicionais);
-  console.log(bebida);
-  console.log(tipoEntrega);
-
-  //   console.log(pequena);
-  //   console.log(media);
-  //   console.log(grande);
-  //   console.log(gigante);
-
-  //   console.log(adicional);
-
-  //   console.log(refri);
-  //   console.log(suco);
-
-  //   console.log(entrega);
-  //   console.log(retirada);
+  // console.log(tamanho);
+  // console.log(adicionais);
+  // console.log(bebida);
+  // console.log(tipoEntrega);
 });

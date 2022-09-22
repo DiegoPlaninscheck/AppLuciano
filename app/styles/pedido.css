@@ -147,6 +147,11 @@ header {
   margin-bottom: 10px;
 }
 
+.container-footer-div button a{
+  text-decoration: none;
+  color: #fff;
+}
+
 h3 {
   font-size: 20px;
 }
