@@ -161,6 +161,10 @@ header {
   padding: 5px;
 }
 
+.container-footer-div button:hover{
+  color: rgb(0, 0, 0);
+}
+
 .container-footer-div button {
   width: 40%;
   height: 38px;
@@ -182,5 +186,5 @@ h3 {
 }
 
 a:hover {
-  color: black;
+  color: rgb(0, 0, 0);
 }
