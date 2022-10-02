@@ -92,26 +92,26 @@ document.getElementById("confirmar").addEventListener("click", () => {
   let bebida;
   let tipoEntrega;
 
-  // if (!(nome.value && email.value && telefone.value && endereco.value)) {
-  //   alert("Preencha todos os campos!");
-  // } else {
-  //   const pessoa = {
-  //     nome: nome.value,
-  //     email: email.value,
-  //     telefone: telefone.value,
-  //     endereco: endereco.value,
-  //   };
-  //   // localStorage.setItem("pessoa", pessoa);
-  // }
+  if (!(nome.value && email.value && telefone.value && endereco.value)) {
+    alert("Preencha todos os campos!");
+  } else {
+    const pessoa = {
+      nome: nome.value,
+      email: email.value,
+      telefone: telefone.value,
+      endereco: endereco.value,
+    };
+    localStorage.setItem("pessoa", JSON.stringify(pessoa));
+  }
 
   if (pequena.selected) {
-    tamanho = pequena.value;
+    tamanho = "Pequeno";
   } else if (media.selected) {
-    tamanho = media.value;
+    tamanho = "Medio";
   } else if (grande.selected) {
-    tamanho = grande.value;
+    tamanho = "Grande";
   } else if (gigante.selected) {
-    tamanho = gigante.value;
+    tamanho = "Gigante";
   }
 
   if (adicional.checked) {
@@ -130,15 +130,17 @@ document.getElementById("confirmar").addEventListener("click", () => {
     tipoEntrega = retirada.value;
   }
 
-  const pizza = {
-    tamanho: tamanho,
-    adicionais: adicionais,
-    bebidas: bebida,
-    entrega: tipoEntrega,
-  };
-
-  console.log(tamanho);
-  console.log(adicionais);
-  console.log(bebida);
-  console.log(tipoEntrega);
+  if (!(tamanho && adicionais && bebida && entrega)) {
+    alert("Escolha as opcoes da pizza");
+  } else {
+    const pizza = {
+      tamanho: tamanho,
+      adicionais: adicionais,
+      bebidas: bebida,
+      entrega: tipoEntrega,
+    };
+    localStorage.setItem("pizza", JSON.stringify(pizza));
+    let link = document.getElementById("link");
+    link.href = "../confirma/index.html";
+  }
 });
