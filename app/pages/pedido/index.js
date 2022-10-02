@@ -1,25 +1,6 @@
-let nome = document.getElementById("nome");
-let email = document.getElementById("email");
-let telefone = document.getElementById("telefone");
-let endereco = document.getElementById("endereco");
-
-let pequena = document.getElementById("p");
-let media = document.getElementById("m");
-let grande = document.getElementById("g");
-let gigante = document.getElementById("gg");
-
-let adicional = document.getElementById("borda");
-
-let refri = document.getElementById("refri");
-let suco = document.getElementById("suco");
-
-let entrega = document.getElementById("entrega");
-let retirada = document.getElementById("retirada");
-
 let sabores = document.getElementById("sabores");
 
 sabores.addEventListener("change", () => {
-
   while (true) {
     let selects = document.getElementById("select");
     if (!!selects) {
@@ -62,15 +43,50 @@ sabores.addEventListener("change", () => {
 
   for (let i = 0; i < qtdSabores; i++) {
     let select = document.createElement("select");
-    select.id = "select"
+    for (let j = 0; j < 5; j++) {
+      let option = document.createElement("option");
+      if (j == 0) {
+        option.value = "cal";
+        option.innerText = "Calabresa";
+      } else if (j == 1) {
+        option.value = "fra";
+        option.innerText = "Frago";
+      } else if (j == 2) {
+        option.value = "mig";
+        option.innerText = "Mignon";
+      } else if (j == 3) {
+        option.value = "pep";
+        option.innerText = "Peperoni";
+      } else if (j == 4) {
+        option.value = "aeo";
+        option.innerText = "Alho e oleo";
+      }
+      select.appendChild(option);
+    }
+    select.id = "select";
     divSelect.appendChild(select);
   }
 });
 
+let nome = document.getElementById("nome");
+let email = document.getElementById("email");
+let telefone = document.getElementById("telefone");
+let endereco = document.getElementById("endereco");
 
+let pequena = document.getElementById("p");
+let media = document.getElementById("m");
+let grande = document.getElementById("g");
+let gigante = document.getElementById("gg");
+
+let adicional = document.getElementById("borda");
+
+let refri = document.getElementById("refri");
+let suco = document.getElementById("suco");
+
+let entrega = document.getElementById("entrega");
+let retirada = document.getElementById("retirada");
 
 document.getElementById("confirmar").addEventListener("click", () => {
-  console.log(sabores.value);
   let tamanho;
   let adicionais;
   let bebida;
@@ -88,13 +104,13 @@ document.getElementById("confirmar").addEventListener("click", () => {
   //   // localStorage.setItem("pessoa", pessoa);
   // }
 
-  if (pequena.checked) {
+  if (pequena.selected) {
     tamanho = pequena.value;
-  } else if (media.checked) {
+  } else if (media.selected) {
     tamanho = media.value;
-  } else if (grande.checked) {
+  } else if (grande.selected) {
     tamanho = grande.value;
-  } else if (gigante.checked) {
+  } else if (gigante.selected) {
     tamanho = gigante.value;
   }
 
@@ -121,10 +137,8 @@ document.getElementById("confirmar").addEventListener("click", () => {
     entrega: tipoEntrega,
   };
 
-  // console.log(tamanho);
-  // console.log(adicionais);
-  // console.log(bebida);
-  // console.log(tipoEntrega);
+  console.log(tamanho);
+  console.log(adicionais);
+  console.log(bebida);
+  console.log(tipoEntrega);
 });
-
-

@@ -52,54 +52,14 @@
           <b><p>Tamanho:</p></b>
           <select id="sabores">
             <option>Selecione o tamanho</option>
-            <option value="2">Pequena (2 sabores)</option>
-            <option value="3">Média (3 sabores)</option>
-            <option value="4">Grande (4 sabores)</option>
-            <option value="5">Gigante (5 sabores)</option>
+            <option id="p" value="2">Pequena (2 sabores)</option>
+            <option id="m" value="3">Média (3 sabores)</option>
+            <option id="g" value="4">Grande (4 sabores)</option>
+            <option id="gg" value="5">Gigante (5 sabores)</option>
           </select>
         </div>
         <b style="display: none" id="saboresTitulo"><p>Sabores:</p></b>
-        <div id="selects">
-          <!-- <select name="sabores" id="sabores">
-            <option value="cal">Calabresa</option>
-            <option value="fra">Frango</option>
-            <option value="mig">Mignon</option>
-            <option value="pep">Peperoni</option>
-            <option value="aeo">Alho e Oleo</option>
-          </select>
-
-          <select name="sabores1" id="sabores1">
-            <option value="cal">Calabresa</option>
-            <option value="fra">Frango</option>
-            <option value="mig">Mignon</option>
-            <option value="pep">Peperoni</option>
-            <option value="aeo">Alho e Oleo</option>
-          </select>
-
-          <select name="sabores2" id="sabores2">
-            <option value="cal">Calabresa</option>
-            <option value="fra">Frango</option>
-            <option value="mig">Mignon</option>
-            <option value="pep">Peperoni</option>
-            <option value="aeo">Alho e Oleo</option>
-          </select>
-
-          <select name="sabores3" id="sabores3">
-            <option value="cal">Calabresa</option>
-            <option value="fra">Frango</option>
-            <option value="mig">Mignon</option>
-            <option value="pep">Peperoni</option>
-            <option value="aeo">Alho e Oleo</option>
-          </select>
-
-          <select name="sabores4" id="sabores4">
-            <option value="cal">Calabresa</option>
-            <option value="fra">Frango</option>
-            <option value="mig">Mignon</option>
-            <option value="pep">Peperoni</option>
-            <option value="aeo">Alho e Oleo</option>
-          </select> -->
-        </div>
+        <div id="selects"></div>
         <div>
           <b>
             <p>Adicionais:</p>
@@ -112,8 +72,8 @@
             <p>Bebidas:</p>
           </b>
           <input type="checkbox" id="refri" value="refrigerante" /> Refrigerante
-          2L (R$ 10) <input type="checkbox" id="suco" value="suco" /> Suco 1L
-          (R$ 8)
+          2L + (R$ 10) <input type="checkbox" id="suco" value="suco" /> Suco 1L
+          + (R$ 8)
         </div>
         <div>
           <b>
