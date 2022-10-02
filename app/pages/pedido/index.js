@@ -44,7 +44,7 @@ sabores.addEventListener("change", () => {
   for (let i = 0; i < qtdSabores; i++) {
     let select = document.createElement("select");
     for (let j = 0; j < 5; j++) {
-      let option = document.createElement("option");
+      var option = document.createElement("option");
       if (j == 0) {
         option.value = "cal";
         option.innerText = "Calabresa";
@@ -62,6 +62,11 @@ sabores.addEventListener("change", () => {
         option.innerText = "Alho e oleo";
       }
       select.appendChild(option);
+      divSelect.addEventListener("change", () => {
+        let listaSabores = [];
+        listaSabores.push(option.innerText);
+        console.log(listaSabores);
+      });
     }
     select.id = "select";
     divSelect.appendChild(select);
