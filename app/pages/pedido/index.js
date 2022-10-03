@@ -190,8 +190,10 @@ document.getElementById("confirmar").addEventListener("click", () => {
     if (sabor) sabores.push(sabor);
   }
 
-  if (!(tamanho && sabores && adicionais && bebida && entrega)) {
-    alert("Escolha as opcoes da pizza");
+  //aruumar
+
+  if (!(tamanho && sabores != [] && adicionais && bebida && entrega)) {
+    alert("Escolha as opções da pizza");
   } else {
     const pizza = {
       tamanho: tamanho,
