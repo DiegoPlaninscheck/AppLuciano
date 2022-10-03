@@ -1,10 +1,70 @@
-let sabores = document.getElementById("sabores");
+let tamanho = document.getElementById("tamanho");
 
-sabores.addEventListener("change", () => {
+let qtdSabores;
+const listaSabores = [
+  {
+    name: "Selecione",
+    value: "",
+  },
+  {
+    name: "Strogonoff de Frango",
+    value: "chickenStrognoff",
+  },
+  {
+    name: "Calabresa",
+    value: "calabresa",
+  },
+  {
+    name: "Portuguesa",
+    value: "portuguesa",
+  },
+  {
+    name: "Marguerita",
+    value: "margerita",
+  },
+  {
+    name: "Quatro queijos",
+    value: "fourCheeses",
+  },
+  {
+    name: "Frango com Catupiry",
+    value: "chikenCatupity",
+  },
+  {
+    name: "Mexicana",
+    value: "mexican",
+  },
+  {
+    name: "Coração",
+    value: "hearth",
+  },
+  {
+    name: "Sensação",
+    value: "sensation",
+  },
+  {
+    name: "Dois Amores",
+    value: "twoLoves",
+  },
+  {
+    name: "Banana Nevada",
+    value: "white-banana",
+  },
+  {
+    name: "Prestigio",
+    value: "prestigio",
+  },
+  {
+    name: "Confete",
+    value: "confete",
+  },
+];
+
+tamanho.addEventListener("change", () => {
   while (true) {
-    let selects = document.getElementById("select");
+    let selects = document.getElementById("pizzaFlavors");
     if (!!selects) {
-      document.getElementById("select").remove();
+      document.getElementById("pizzaFlavors").remove();
     }
     if (!selects) {
       break;
@@ -13,8 +73,7 @@ sabores.addEventListener("change", () => {
 
   let saborTitulo = document.getElementById("saboresTitulo");
 
-  let qtdSabores;
-  switch (sabores.value) {
+  switch (tamanho.value) {
     case "2": {
       qtdSabores = 2;
       break;
@@ -37,41 +96,30 @@ sabores.addEventListener("change", () => {
     }
   }
 
-  let divSelect = document.getElementById("selects");
-
   saborTitulo.style.display = "flex";
-
   for (let i = 0; i < qtdSabores; i++) {
-    let select = document.createElement("select");
-    for (let j = 0; j < 5; j++) {
-      var option = document.createElement("option");
-      if (j == 0) {
-        option.value = "cal";
-        option.innerText = "Calabresa";
-      } else if (j == 1) {
-        option.value = "fra";
-        option.innerText = "Frago";
-      } else if (j == 2) {
-        option.value = "mig";
-        option.innerText = "Mignon";
-      } else if (j == 3) {
-        option.value = "pep";
-        option.innerText = "Peperoni";
-      } else if (j == 4) {
-        option.value = "aeo";
-        option.innerText = "Alho e oleo";
-      }
-      select.appendChild(option);
-      divSelect.addEventListener("change", () => {
-        let listaSabores = [];
-        listaSabores.push(option.innerText);
-        console.log(listaSabores);
-      });
-    }
-    select.id = "select";
-    divSelect.appendChild(select);
+    const sabores = document.getElementById("sabores");
+    const div = document.createElement("div");
+
+    div.id = "pizzaFlavors";
+
+    const saborSelecionado = document.createElement("select");
+    saborSelecionado.id = `flavor-${i + 1}`;
+    listaSabores.forEach((sabor) => {
+      const option = new Option(sabor.name, sabor.value);
+      saborSelecionado.add(option);
+    });
+
+    const saborTitulo = document.createElement("h5");
+    saborTitulo.innerText = `Sabor ${i + 1}`;
+    div.appendChild(saborTitulo);
+    div.appendChild(saborSelecionado);
+    div.style.display = "flex";
+    sabores.style.flexDirection = "column";
+    sabores.appendChild(div);
   }
-});
+}
+);
 
 let nome = document.getElementById("nome");
 let email = document.getElementById("email");
@@ -135,14 +183,22 @@ document.getElementById("confirmar").addEventListener("click", () => {
     tipoEntrega = retirada.value;
   }
 
-  if (!(tamanho && adicionais && bebida && entrega)) {
+  const sabores = [];
+  for (let i = 0; qtdSabores > i; i++) {
+    const select = document.getElementById(`flavor-${i + 1}`);
+    const sabor = select.options[select.selectedIndex].value;
+    if (sabor) sabores.push(sabor);
+  }
+
+  if (!(tamanho && sabores && adicionais && bebida && entrega)) {
     alert("Escolha as opcoes da pizza");
   } else {
     const pizza = {
       tamanho: tamanho,
+      sabores: sabores,
       adicionais: adicionais,
       bebidas: bebida,
-      entrega: tipoEntrega,
+      retirada: tipoEntrega,
     };
     localStorage.setItem("pizza", JSON.stringify(pizza));
     let link = document.getElementById("link");
