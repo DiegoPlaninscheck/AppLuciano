@@ -13,19 +13,21 @@ let endereco = document.getElementById("spanEndereco").innerText = pessoa.endere
 let email = document.getElementById("spanEmail").innerText = pessoa.email
 let telefone = document.getElementById("spanTelefone").innerText = pessoa.telefone
 
-let pizza = {
-    tamanho: JSON.parse(dataPizza).tamanho,
-    sabores: JSON.parse(dataPizza).sabores,
-    adicionais: JSON.parse(dataPizza).adicionais,
-    bebidas: JSON.parse(dataPizza).bebidas,
-    retirada: JSON.parse(dataPizza).retirada,
-    precoTotal: JSON.parse(dataPizza).precoTotal
-}
+// let pizza = {
+//     tamanho: JSON.parse(dataPizza).tamanho,
+//     sabores: JSON.parse(dataPizza).sabores,
+//     adicionais: JSON.parse(dataPizza).adicionais,
+//     bebidas: JSON.parse(dataPizza).bebidas,
+//     retirada: JSON.parse(dataPizza).retirada,
+//     precoTotal: JSON.parse(dataPizza).precoTotal
+// }
+
+let pizza = JSON.parse(dataPizza)
 
 document.getElementById("spanTamanho").innerText = pizza.tamanho
 document.getElementById("spanSabores").innerText = pizza.sabores 
 document.getElementById("spanAdicionais").innerText = pizza.adicionais || "Nada"
-document.getElementById("spanBebida").innerText = pizza.bebidas || "Nada"
+document.getElementById("spanBebida").innerText = pizza.bebidas.length ? pizza.bebidas : "Nada"
 document.getElementById("spanRetirada").innerText = pizza.retirada
 
 
