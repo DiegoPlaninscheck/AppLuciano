@@ -19,13 +19,19 @@ let pizza = {
     adicionais: JSON.parse(dataPizza).adicionais,
     bebidas: JSON.parse(dataPizza).bebidas,
     retirada: JSON.parse(dataPizza).retirada,
+    precoTotal: JSON.parse(dataPizza).precoTotal
 }
 
 document.getElementById("spanTamanho").innerText = pizza.tamanho
 document.getElementById("spanSabores").innerText = pizza.sabores
-document.getElementById("spanAdicionais").innerText = pizza.adicionais
-document.getElementById("spanBebida").innerText = pizza.bebidas
+document.getElementById("spanAdicionais").innerText = pizza.adicionais || "Nada"
+document.getElementById("spanBebida").innerText = pizza.bebidas || "Nada"
 document.getElementById("spanRetirada").innerText = pizza.retirada
 
 
-document.getElementById("spanValorTotal").innerText = "";
+document.getElementById("spanValorTotal").innerText = "R$" + pizza.precoTotal;
+
+// function removerDoLocalStorage() {
+//     localStorage.removeItem("pessoa");
+//     localStorage.removeItem("pizza");
+// }

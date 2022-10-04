@@ -140,45 +140,42 @@ let entrega = document.getElementById("entrega");
 let retirada = document.getElementById("retirada");
 
 document.getElementById("confirmar").addEventListener("click", () => {
-  let tamanho;
-  let adicionais;
-  let bebida;
-  let tipoEntrega;
-
-  if (!(nome.value && email.value && telefone.value && endereco.value)) {
-    alert("Preencha todos os campos!");
-  } else {
-    const pessoa = {
-      nome: nome.value,
-      email: email.value,
-      telefone: telefone.value,
-      endereco: endereco.value,
-    };
-    localStorage.setItem("pessoa", JSON.stringify(pessoa));
-  }
+  let tamanho = "";
+  let adicionais = "";
+  let bebida = "";
+  let tipoEntrega = "";
+  let precoTotal = 0;
 
   if (pequena.selected) {
     tamanho = "Pequeno";
+    precoTotal += 20;
   } else if (media.selected) {
-    tamanho = "Medio";
+    tamanho = "Médio";
+    precoTotal += 25;
   } else if (grande.selected) {
     tamanho = "Grande";
+    precoTotal += 30;
   } else if (gigante.selected) {
     tamanho = "Gigante";
+    precoTotal += 35;
   }
 
   if (adicional.checked) {
     adicionais = adicional.value;
+    precoTotal += 8;
   }
 
   if (refri.checked) {
     bebida = refri.value;
+    precoTotal += 10;
   } else if (suco.checked) {
     bebida = suco.value;
+    precoTotal += 8;
   }
 
   if (entrega.checked) {
     tipoEntrega = entrega.value;
+    precoTotal += 5;
   } else if (retirada.checked) {
     tipoEntrega = retirada.value;
   }
@@ -190,20 +187,31 @@ document.getElementById("confirmar").addEventListener("click", () => {
     if (sabor) sabores.push(sabor);
   }
 
-  //aruumar
-
-  if (!(tamanho && sabores != [] && adicionais && bebida && entrega)) {
-    alert("Escolha as opções da pizza");
+  if (!(nome.value && email.value && telefone.value && endereco.value)) {
+    alert("Preencha todos os campos!");
   } else {
-    const pizza = {
-      tamanho: tamanho,
-      sabores: sabores,
-      adicionais: adicionais,
-      bebidas: bebida,
-      retirada: tipoEntrega,
-    };
-    localStorage.setItem("pizza", JSON.stringify(pizza));
-    let link = document.getElementById("link");
-    link.href = "../confirma/index.html";
+    if (tamanho == "" || sabores == "" || tipoEntrega == "") {
+      alert("Escolha as opções da pizza");
+    } else {
+      const pessoa = {
+        nome: nome.value,
+        email: email.value,
+        telefone: telefone.value,
+        endereco: endereco.value,
+      };
+      localStorage.setItem("pessoa", JSON.stringify(pessoa));
+      const pizza = {
+        tamanho: tamanho,
+        sabores: sabores,
+        adicionais: adicionais,
+        bebidas: bebida,
+        retirada: tipoEntrega,
+        precoTotal: precoTotal
+      };
+      localStorage.setItem("pizza", JSON.stringify(pizza));
+      let link = document.getElementById("link");
+      link.href = "../confirma/index.html";
+    }
   }
+
 });
