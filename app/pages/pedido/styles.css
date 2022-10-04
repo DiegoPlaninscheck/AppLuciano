@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #f1d39e;
+  background-color: #B1E1FF;
   height: 100vh;
   font-size: 14px;
 }
@@ -17,7 +17,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #FFB200;
 }
 
 header {
@@ -32,13 +32,13 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #c33a38;
+  background-color: #277BC0;
   padding: 0 20px;
 }
 
 .container-header a {
   text-decoration: none;
-  color: #fff;
+  color: #FFB200;
   font-size: 18px;
   cursor: pointer;
 }
@@ -175,9 +175,13 @@ header {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #c33a38;
+  background-color: #277BC0;
   color: #fff;
   margin-bottom: 10px;
+}
+
+a#link:hover{
+  color: #FFB200;
 }
 
 #link {
@@ -186,7 +190,7 @@ header {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #c33a38;
+  background-color: #277BC0;
   color: #fff;
   margin-bottom: 10px;
   text-decoration: none;
@@ -202,7 +206,7 @@ h3 {
 }
 
 a:hover {
-  color: rgb(0, 0, 0);
+  color: #fff;
 }
 
 h5{

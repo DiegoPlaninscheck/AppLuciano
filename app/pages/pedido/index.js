@@ -8,55 +8,55 @@ const listaSabores = [
   },
   {
     name: "Strogonoff de Frango",
-    value: "chickenStrognoff",
+    value: "Strogonoff de Frango",
   },
   {
     name: "Calabresa",
-    value: "calabresa",
+    value: "Calabresa",
   },
   {
     name: "Portuguesa",
-    value: "portuguesa",
+    value: "Portuguesa",
   },
   {
     name: "Marguerita",
-    value: "margerita",
+    value: "Marguerita",
   },
   {
     name: "Quatro queijos",
-    value: "fourCheeses",
+    value: "Quatro queijos",
   },
   {
     name: "Frango com Catupiry",
-    value: "chikenCatupity",
+    value: "Frango com Catupiry",
   },
   {
     name: "Mexicana",
-    value: "mexican",
+    value: "Mexicana",
   },
   {
     name: "Coração",
-    value: "hearth",
+    value: "Coração",
   },
   {
     name: "Sensação",
-    value: "sensation",
+    value: "Sensação",
   },
   {
     name: "Dois Amores",
-    value: "twoLoves",
+    value: "Dois Amores",
   },
   {
     name: "Banana Nevada",
-    value: "white-banana",
+    value: "Banana Nevada",
   },
   {
     name: "Prestigio",
-    value: "prestigio",
+    value: "Prestigio",
   },
   {
     name: "Confete",
-    value: "confete",
+    value: "Confete",
   },
 ];
 
@@ -142,9 +142,11 @@ let retirada = document.getElementById("retirada");
 document.getElementById("confirmar").addEventListener("click", () => {
   let tamanho = "";
   let adicionais = "";
-  let bebida = "";
+  let bebida1 = "";
   let tipoEntrega = "";
   let precoTotal = 0;
+  let bebida2 = "";
+  const listaBebidas = []
 
   if (pequena.selected) {
     tamanho = "Pequeno";
@@ -166,11 +168,14 @@ document.getElementById("confirmar").addEventListener("click", () => {
   }
 
   if (refri.checked) {
-    bebida = refri.value;
-    precoTotal += 10;
-  } else if (suco.checked) {
-    bebida = suco.value;
+    bebida1 = refri.value;
+    precoTotal += 10; 
+    listaBebidas.push(bebida1)
+  } 
+  if (suco.checked) {
+    bebida2 = suco.value;
     precoTotal += 8;
+    listaBebidas.push(bebida2)
   }
 
   if (entrega.checked) {
@@ -204,7 +209,7 @@ document.getElementById("confirmar").addEventListener("click", () => {
         tamanho: tamanho,
         sabores: sabores,
         adicionais: adicionais,
-        bebidas: bebida,
+        bebidas: listaBebidas,
         retirada: tipoEntrega,
         precoTotal: precoTotal
       };

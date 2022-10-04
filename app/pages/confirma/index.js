@@ -23,7 +23,7 @@ let pizza = {
 }
 
 document.getElementById("spanTamanho").innerText = pizza.tamanho
-document.getElementById("spanSabores").innerText = pizza.sabores
+document.getElementById("spanSabores").innerText = pizza.sabores 
 document.getElementById("spanAdicionais").innerText = pizza.adicionais || "Nada"
 document.getElementById("spanBebida").innerText = pizza.bebidas || "Nada"
 document.getElementById("spanRetirada").innerText = pizza.retirada
