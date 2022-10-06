@@ -134,6 +134,7 @@ let gigante = document.getElementById("gg");
 let adicional = document.getElementById("borda");
 
 let refri = document.getElementById("refri");
+let guarana = document.getElementById("guarana");
 let suco = document.getElementById("suco");
 
 let entrega = document.getElementById("entrega");
@@ -166,6 +167,12 @@ document.getElementById("confirmar").addEventListener("click", () => {
     adicionais = adicional.value;
     precoTotal += 8;
   }
+
+  if (guarana.checked) {
+    bebida1 = guarana.value;
+    precoTotal += 10; 
+    listaBebidas.push(bebida1)
+  } 
 
   if (refri.checked) {
     bebida1 = refri.value;
