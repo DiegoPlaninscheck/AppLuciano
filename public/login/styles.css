@@ -1,45 +1,66 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
 }
 
-.container-principal{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
+.container-principal {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: #277bc0;
 }
 
-.container-principal-inputs{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.container-principal-titulo {
+  height: 20%;
+  margin-top: 15px;
 }
 
-.container-principal-inputs div{
-    /* width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column; */
+.container-principal-inputs {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.container-principal-inputs input{
-    width: 10%;
-    height: 10%;
+.container-principal-inputs div {
+  width: 15%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 15px 0 15px 0;
 }
 
-.container-principal-botao{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container-principal-inputs input {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #ffb200;
+}
+
+.container-principal-botao {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-principal-botao button {
+  width: 10%;
+  height: 10%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ffb200;
 }
