@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  max-height: 100vh;
+  background-color: #277bc0;
+}
+
+.title {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffb200;
+}
+
+.forms {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inputNome {
+  margin: 20px 0;
+}
+
+.inputNome label {
+  color: #ffb200;
+}
+
+.inputNome input {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: #ffb200;
+}
+
+.botao {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botao button {
+  width: 10%;
+  height: 30%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

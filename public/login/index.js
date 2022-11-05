@@ -1,27 +1,21 @@
 const login = async () => {
   const usuario = document.getElementById("usuario").value;
   const senha = document.getElementById("senha").value;
-  let data;
-  try {
-    await fetch("http://localhost:8080/usuario", {
-      method: "GET",
-      mode: "cors",
-      cache: "default",
-    })
-      .then((response) => console.log(response))
-      .then((res) => {
-        data = res;
-      });
-  } catch (err) {
-    console.log(err);
+  const usuarios = await fetch("http://localhost:8080/usuarios").then(
+    (response) => response.json()
+  );
+
+  for (const user of usuarios) {
+    console.log("for", user);
+    if (user.nome == usuario && user.senha == senha) {
+      const div = document.getElementById("containerBotao");
+      const span = document.createElement("span");
+      span.innerText = "Login realizado com sucesso!";
+      div.appendChild(span);
+
+      setTimeout(() => {
+        span.innerText = "";
+      }, 3000);
+    }
   }
-
-  // console.log(data);
-
-  // for (const user of data) {
-  //   console.log("for", user);
-  //   if (user.usuario == usuario) {
-  //       console.log("if", user);
-  //   }
-  // }
 };

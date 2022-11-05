@@ -54,6 +54,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+#containerBotao span {
+  color: #ffb200;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 20px;
 }
 
 .container-principal-botao button {
