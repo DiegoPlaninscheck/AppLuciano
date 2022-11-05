@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-
 const port = 8080;
 
 const usuario = require("./api/usuario");
 
+app.use(express.json())
 app.use(express.static("./public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -22,9 +22,9 @@ app.get("/pedido", (req, res) => {
 // });
 
 app.get("/usuario", (req, res) => {
-  return res.json(usuario.selecionarTodos());
+  res.json(usuario.selecionarTodos());
 });
 
 app.listen(port, () =>
-  console.log(`Server started on http://localhost:${port}`)
+  console.log(`Server started on http://localhost:${port}/login`)
 );

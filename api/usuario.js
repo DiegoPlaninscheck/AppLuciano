@@ -1,11 +1,13 @@
 const conn = require("../db");
 
+conn.query("use pizzaria");
+
 function selecionarTodos() {
-  conn.query("select * from usuarios", (err, results) => {
+  conn.query("select * from usuario", (err, results) => {
     if (err) {
       console.log(err);
     } else {
-      console.log(results);
+      return results;
     }
   });
 }
@@ -13,7 +15,7 @@ function selecionarTodos() {
 function login({ usuario, senha }) {
   console.log(usuario, senha);
   conn.query(
-    "select * from usuarios where nome = " + usuario + " and senha = " + senha,
+    "select * from usuario where nome = " + usuario + " and senha = " + senha,
     (err, results) => {
       if (err) {
         console.log(err);
@@ -25,7 +27,7 @@ function login({ usuario, senha }) {
 }
 
 function selecionarPorID(id) {
-  conn.query("select * from usuarios where id = " + id, (err, results) => {
+  conn.query("select * from usuario where id = " + id, (err, results) => {
     if (err) {
       console.log(err);
     } else {

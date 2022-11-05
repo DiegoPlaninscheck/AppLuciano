@@ -3,8 +3,12 @@ const login = async () => {
   const senha = document.getElementById("senha").value;
   let data;
   try {
-    await fetch("http://localhost:8080/usuario")
-      .then((response) => response.json())
+    await fetch("http://localhost:8080/usuario", {
+      method: "GET",
+      mode: "cors",
+      cache: "default",
+    })
+      .then((response) => console.log(response))
       .then((res) => {
         data = res;
       });
@@ -12,10 +16,12 @@ const login = async () => {
     console.log(err);
   }
 
-  for (const user of data) {
-    console.log("for", user);
-    if (user.usuario == usuario) {
-        console.log("if", user);
-    }
-  }
+  // console.log(data);
+
+  // for (const user of data) {
+  //   console.log("for", user);
+  //   if (user.usuario == usuario) {
+  //       console.log("if", user);
+  //   }
+  // }
 };
